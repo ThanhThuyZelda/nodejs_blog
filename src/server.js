@@ -1,10 +1,16 @@
-const express = require('express') //import thu vien
+//const express = require('express') //import thu vien
+import express from 'express';
+import configViewEngine from './configs/viewEngine';
+
+
 
 const app = express() //chay duoc tat ca cac tinh nang trong express
 const port = 3000
 
+configViewEngine(app);
+
 app.get('/', (req, res) => {
-    res.send('Hello World! Thanh Thuy')
+    res.render('test/index.ejs')
 })
 
 app.get('/about', (req, res) => {
