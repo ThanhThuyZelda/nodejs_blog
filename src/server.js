@@ -1,21 +1,21 @@
 //const express = require('express') //import thu vien
 import express from 'express';
 import configViewEngine from './configs/viewEngine';
+import initWebRoute from './route/web';
 
+
+require('dotenv').config()
 
 
 const app = express() //chay duoc tat ca cac tinh nang trong express
-const port = 3000
+const port = process.env.PORT;
 
+//setup view engine
 configViewEngine(app);
 
-app.get('/', (req, res) => {
-    res.render('test/index.ejs')
-})
+//init web route
+initWebRoute(app);
 
-app.get('/about', (req, res) => {
-    res.send('Thanh Thuy');
-})
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
