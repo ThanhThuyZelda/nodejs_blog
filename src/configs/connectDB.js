@@ -1,9 +1,11 @@
 // get the client
 //import { resolveShowConfigPath } from '@babel/core/lib/config/files/configuration';
-import mysql from 'mysql2';
+import mysql from 'mysql2/promise';
 
-// create the connection to database
-const connection = mysql.createConnection({
+console.log("Creating connection  pool...");
+
+
+const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     database: 'nodejsbasic'
@@ -11,4 +13,4 @@ const connection = mysql.createConnection({
 
 
 
-export default connection;
+export default pool;
