@@ -12,7 +12,9 @@ const app = express() //chay duoc tat ca cac tinh nang trong express
 const port = process.env.PORT;
 
 
-//
+// khai bao nhu middleware
+// config de ho tro gui data tu phia client len server
+//chung ta co the lay data 1 cach don gian
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
